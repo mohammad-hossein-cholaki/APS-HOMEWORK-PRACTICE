@@ -7,6 +7,61 @@
     <title>Document</title>
 </head>
 <body>
-    <p></p>
+    <h2>Homework 1</h2>
+    <h2>Html form </h2>
+    <br>
+    <form >
+        <!-- username -->
+        <label for="username">enter username:</label>
+        <input type="text" id="username" name="username" placeholder="username"  required>
+        
+        <br><br>
+        <!-- email -->
+        <label for="email">enter your email:</label>
+        <input type="email" id="email" name="email" placeholder="your email" required>
+
+        <br><br>
+        <!-- password -->
+        <label for="password">enter your password:</label>
+        <input type="password" id="password" name="password" placeholder="choose a password" required>
+
+        <br><br>
+        <!-- choose your age -->
+        <p>Please select your age:</p>
+        <label for="option-1">0-25</label>
+        <input type="radio" id="option-1" name="age" value="0-25">
+        <label for="option-2">25-50</label>
+        <input type="radio" id="option-2" name="age" value="25-50">
+        <label for="option-3">50+</label>
+        <input type="radio" id="option-3" name="age" value="50+">
+
+        <br><br>
+        <!-- question -->
+        <label for="question">cecurity question:</label>
+        <select name="question" id="question">
+            <option value="q1">What color are your favorite pair of socks?</option>
+            <option value="q2">If you could be a vegetable, What it be?</option>
+            <option value="q3">What is your best ever security question?</option>
+        </select>
+
+        <br><br>
+        <!-- answer -->
+        <label for="answer">security question answer:</label>
+        <input type="text" id="answer" name="answer" placeholder="your answer">
+
+        <br><br>
+        <!-- bio -->
+        <label for="bio">Your bio:</label><br>
+        <textarea name="bio" id="bio" cols="30" rows="10" placeholder="about you..."></textarea>
+
+        <br><br>
+        <!-- button  -->
+        <input type="submit" value="Submit the form">
+    </form>
+    <br>
+    <br>
+    <hr>
+    <br>
+    
 </body>
 </html>
