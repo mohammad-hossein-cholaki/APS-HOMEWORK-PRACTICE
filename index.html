@@ -147,6 +147,193 @@ form
       <br>
       <hr>
       <br>
-      
+
+      <h2>an article about branching strategies</h2>
+      <p>
+        
+        •	Note of reflection <br>
+        if a team doing continuous delivery of software it's better they use simpler workflow like github.
+        <br>
+        but if they building software that is versioned, or if they need to support multiple versions of software, then it's better they use git-flow
+        <br>
+        
+        •	why git?
+        <br>
+        in the past, merging/branching have been difficult tasks and some thing you can only do every once in a while.
+        but now because of git and github they are simple and routine tasks.
+        <br>
+        
+        •	Decentralized but centralized
+        <br>
+        people who work on the same project, in addition to their direct relationship that they have with origin , they can form a team together and work on a big feature .
+        <br>
+        
+        •	the main branches
+        <br>
+        The central repo holds two main branches with an infinite lifetime:
+        <br>
+        master 
+        <br>
+        develop
+        <br>
+        The master branch should be familiar to every Git user.
+        <br>
+        Parallel to the main branch, there is also an another branch called develop
+        <br>
+        we consider the master branch as the main branch
+        <br>
+        We consider the develop branch as the branch where the latest development changes for the next version are submitted.
+        <br>
+        Some would call this the “integration branch”.
+        <br>
+        When the source code in the develop branch reaches a stable point and is ready to be released,
+        <br>
+        all of the changes should be merged back into master
+        <br>
+        each time when changes are merged back into master,
+        <br>
+        this is a new  release
+        <br>
+        •	supporting branch
+        <br>
+        
+        next to main branches and develop branch, our development model uses a variety of other branches too.
+        <br>
+        unlike the main branches, these branches always have a limited life time. and they will removed eventually.
+        <br>
+        the diffrent types of branches we may use are:
+        <br>
+        feature branches
+        <br>
+        release branches
+        <br>
+        hotfix branches
+        <br>
+        
+        •	feature branches
+        <br>
+        branch off from develop and Must merge back into develop.
+        <br>
+        branch cannot have the following names: master, develop, release-*, or hotfix-*
+        <br>
+        Feature branches  are used to develop new features for the upcoming or a distant future release.
+        <br>
+        feature branch  exists as long as the feature is in development,
+        <br>
+        But in the end, it will be merged into the develop branch.or discarded
+        <br>
+        
+        •	Creating a feature branch
+        <br>
+        When we want to starting work on a new feature, we should branch off from the develop branch.
+        <br>
+        
+        •	Incorporating a finished feature on develop
+        <br>
+        Finished features may be merged into the develop branch to add them to the upcoming release.
+        <br>
+        The --no-ff flag causes the merge to always create a new commit object.
+        <br>
+        This avoids losing information about the historical existence of a feature branch and groups together all commits that together added the feature.
+        <br>
+        Using the --no-ff flag, we can see from the Git history  which of the commit objects together have implemented a feature
+        <br>
+        
+        •	Release branches
+        <br>
+        each branch should merge back to develop or master branch.
+        <br>
+        We should name branches like this:
+        <br>
+        release-*
+        <br>
+        Release branches support preparation of a new production release. they allow for minor bug fixes and preparing meta-data for a release.
+        <br>
+        This makes the develop branch cleared to receive features for the next release.
+        <br>
+        when deveolp reflects the desired state of the new release. we make new release branch from develop branch.
+        <br>
+        It is at the start of a release branch that the upcoming release gets assigned a version number
+        <br>
+        
+        •	Creating a release branch
+        <br>
+        Release branches are created from the develop branch.
+        <br>
+        After creating a new branch and switching to it, we bump the version number.
+        <br>
+        bump-version.
+        <br>
+        sh is a fictional shell script that changes some files in the working copy to reflect the new version.
+        <br>
+        This new branch may exist there for a while, until the release may be rolled out definitely.
+        <br>
+        bug fixes may be applied in this branch .  Adding large new features here is strictly prohibited.
+        <br>
+        
+        •	Finishing release branch
+        <br>
+        When the state of the release branch is ready to become a real release, Some actions must be taken.
+        <br>
+        First:
+        <br>
+        the release branch is merged into master 
+        <br>
+        Next,
+        <br>
+        that commit on master must be tagged for easy future reference to this historical version. 
+        <br>
+        Finally,
+        <br>
+        the changes made on the release branch need to be merged back into develop, so that future releases also contain these bug fixes.
+        <br>
+        
+        •	Hotfix branches
+        <br>
+        each branch that branching off from main branch , must merge  back into develop or main branch.
+        <br>
+        Branch naming convention:
+        <br>
+        hotfix-*
+        <br>
+        Hotfix branches are like release branches. they both meant to prepare for a new production release.
+        <br>
+        we use hotfix branch when critical bug in a production version must be resolved immediately.
+        <br>
+        •	Creating the hotfix branch
+        <br>
+        we branch off hotfix branches from master branch
+        <br>
+        for example :
+        <br>
+        when changes on our production develop are yet unstable.
+        <br>
+        we branch off a hotfix branch and start fixing the problem.
+        <br>
+        
+        •	Finishing a hotfix branch
+        <br>
+        when bugs fixed we should merge back hotfix into master.
+        <br>
+        we also need to merge it back into develop branch. This is completely similar to how release branches are finished.
+        <br>
+        
+        when a release branch currently exists, the hotfix changes need to be merged into that release branch, instead of develop.
+        <br>
+        when we merge back bugfix into relase brach, its look like bugfix being merged into develop too.
+        <br>
+        
+        •	Summary
+        <br>
+        Although there is nothing very shocking about branching model, but its very useful to over projects.
+        <br>
+        and its allows team members to develop a shared understanding of the branching and releasing processes.
+        <br>
+        <br>
+        <hr>
+        
+
+        </p>
+
 </body>
 </html>
